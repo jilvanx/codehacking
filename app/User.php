@@ -37,4 +37,16 @@ class User extends Authenticatable
     }
 
 
+    /**
+     * User belongs to Photo.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function photo()
+    {
+        // belongsTo(RelatedModel, foreignKey = photo_id, keyOnRelatedModel = id)
+        return $this->belongsTo('App\Photo');
+    }
+
+
 }
