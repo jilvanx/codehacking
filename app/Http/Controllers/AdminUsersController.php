@@ -75,11 +75,11 @@ class AdminUsersController extends Controller
 
             $photo = Photo::create(['file'=>$name]);
 
-            $input['photo_id'] = $photo->id; 
+            $input['photo_id'] = $photo->id;
 
         }
 
-        
+
         User::create($input);
 
         return redirect('/admin/users');
@@ -176,7 +176,9 @@ class AdminUsersController extends Controller
 
         $user = User::findOrFail($id);
 
-        unlink(public_path() . $user->photo->file);
+        if ($user->photo){
+            unlink(public_path() . $user->photo->file);
+        }
 
         $user->delete();
 
