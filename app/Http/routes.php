@@ -12,7 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $pass = "";//bcrypt('123432');
+
+    return view('welcome', compact('pass'));
 });
 
 Route::auth();
