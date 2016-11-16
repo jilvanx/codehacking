@@ -11,9 +11,11 @@
                     Your Application's Landing Page.
                 </div>
                 <br>
-                <h4>{{$pass}}</h3>
+                {{-- <h4>{{$pass}}</h3> --}}
             </div>
         </div>
     </div>
 </div>
+
+
 @endsection
